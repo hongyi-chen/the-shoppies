@@ -1,4 +1,9 @@
+# dependencies
 node_modules/
+
+# production
 build/
-.vscode
+
+# misc
+.vscode/
 .DS_Store
