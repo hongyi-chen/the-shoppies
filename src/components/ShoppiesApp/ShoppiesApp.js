@@ -6,7 +6,7 @@ function ShoppiesApp() {
     return(
         <div>
             <h1>The Shoppies</h1>
-            <h2>Search for a movie</h2>
+            <h2>Search for a movie:</h2>
             <SearchBar />
         </div>
         // top section
