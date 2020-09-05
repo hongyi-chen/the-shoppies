@@ -1,0 +1,21 @@
+.results-and-noms-section {
+    margin-top: 2%;
+}
+
+.results {
+    float: left;
+    width: 65%;
+    /* background-color: white; */
+}
+
+.nominations {
+    float: left;
+    width: 35%;
+}
+
+.nominated-movies {
+    height: 50vh;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
