@@ -25,3 +25,8 @@
     border-radius: 5px;
     background-color: #FFFFFF;
 }
+
+h1 {
+    margin-left: calc(4%);
+    padding-top: calc(1%);
+}
