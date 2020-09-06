@@ -12,12 +12,15 @@ function ShoppiesApp() {
   const nominatedMovies = useSelector((state) => state.movies.nominatedMovies);
   const status = useSelector((state) => state.movies.isLoading);
 
-  const resultsText = movieResults.length === 0 ? "Please search for a movie above" : "Click on a movie to nominate it";
+  const resultsText =
+    movieResults.length === 0
+      ? "Please search for a movie above"
+      : "Click on a movie to nominate it";
   let nomsText = "Please search for a movie above";
   if (movieResults.length !== 0 && nominatedMovies.length === 0) {
-      nomsText = "Please nominate a movie first"
+    nomsText = "Please nominate a movie first";
   } else if (nominatedMovies.length !== 0) {
-      nomsText = "Click on a movie to un-nominate it"
+    nomsText = "Click on a movie to un-nominate it";
   }
 
   return (
@@ -49,9 +52,11 @@ function ShoppiesApp() {
           </h3>
           <div className="movie-cards">
             {status ? ( // you can add in a loading indicator here
-            <p>Loading...</p>
+              <p>Loading...</p>
             ) : (
-              movieResults.map((movieData) => <MovieCard movie={movieData} />)
+              movieResults.map((movieData) => (
+                <MovieCard key={movieData.imdbID} movie={movieData} />
+              ))
             )}
           </div>
         </div>
