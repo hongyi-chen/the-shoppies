@@ -1,5 +1,5 @@
 .results-and-noms-section {
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .results {
@@ -9,7 +9,7 @@
 }
 
 .movie-cards {
-    height: 60vh;
+    height: 58vh;
     overflow: auto;
     scroll-padding: 0px 0px 0px 0px;
 }
@@ -20,7 +20,7 @@
 }
 
 .nominated-movies {
-    height: 50vh;
+    height: 48vh;
     width: 100%;
     border-radius: 5px;
     background-color: #FFFFFF;

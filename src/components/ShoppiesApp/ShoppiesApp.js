@@ -55,6 +55,7 @@ function ShoppiesApp() {
       <div className="results-and-noms-section">
         <div className="results">
           <h2>Results for</h2>{" "}
+          <h3>Click on a movie to nominate it!</h3>
           {/* Remember to change this to include the search */}
           <div className="movie-cards">
             {testMovies.map((movieData) => (
@@ -64,6 +65,7 @@ function ShoppiesApp() {
         </div>
         <div className="nominations">
           <h2>Nominations</h2>
+          <h3>Click on a movie to un-nominate!</h3>
           <div className="nominated-movies"></div>
           <SubmitButton />
         </div>
