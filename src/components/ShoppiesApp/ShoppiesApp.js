@@ -3,6 +3,7 @@ import "./ShoppiesApp.css";
 import SearchBar from "../SearchBar/SearchBar";
 import ShoppingBag from "../../images/shopping-bag.png";
 import SubmitButton from "../SubmitButton/SubmitButton";
+import MovieCard from "../MovieCard/MovieCard";
 
 function ShoppiesApp() {
   return (
@@ -22,7 +23,16 @@ function ShoppiesApp() {
       </div>
       <div className="results-and-noms-section">
         <div className="results">
-          <h2>Results for</h2>
+          <h2>Results for</h2>{" "}
+          {/* Remember to change this to include the search */}
+          <div className="movie-cards">
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+          </div>
         </div>
         <div className="nominations">
           <h2>Nominations</h2>

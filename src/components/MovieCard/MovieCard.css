@@ -1,0 +1,141 @@
+.input-group {
+    background-color: #fff;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    width: 97%;
+    height: 12vh;
+    border-radius: 5px;
+    margin-bottom: 2.5%;
+}
+.input-group label {
+    padding: 0px 30px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    text-align: left;
+    color: #3c454c;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+}
+
+.input-group label:before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: '';
+    background-color: #ffce66;
+    position: absolute;
+    left: 50%; /*this can be used to change the spacing*/
+    top: 50%;
+    text-align: left;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: -1;
+}
+.input-group label:after {
+    width: 32px;
+    height: 32px;
+    content: '';
+    border: 2px solid #d1d7dc;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+    box-shadow: 5px 5px 25px -5px #ABABAB;
+}
+.input-group input:checked ~ label {
+    color: #fff;
+    border-radius: 5px;
+}
+.input-group input:checked ~ label:before {
+    transform: translate(-50%, -50%) scale3d(75, 75, 1);
+    opacity: 1;
+}
+
+.input-group input:checked ~ img:before {
+    border-radius: 5px;
+}
+.input-group input:checked ~ label:after {
+    background-color: #4ad97f;
+    border-color: #4ad97f;
+}
+.input-group input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.input-group p:before{
+    color: #ABABAB;
+}
+
+.input-group input:checked ~ p{
+    color: white;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+h4 {
+    margin-top: 4vh;
+    line-height: 0rem;
+    font-size: 1.75rem;
+    color: #333333;
+}
+
+p {
+    margin-top: 0vh;
+    line-height: 0rem;
+    font-weight: 500;
+}
+
+img {
+    position: absolute;
+    border-radius: 5px;
+}
+
+.card-label {
+    display: block;
+    min-width: calc(60%);
+    max-width: calc(60%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    z-index: 1;
+}
+
+.card-poster {
+    float: left;
+    margin-left: 5%;
+}
+
+.card-poster img {
+    bottom: -100%;
+}

@@ -4,8 +4,15 @@
 
 .results {
     float: left;
-    width: 65%;
+    width: 60%;
+    margin-right: 5%;
     /* background-color: white; */
+}
+
+.movie-cards {
+    height: 60vh;
+    overflow: auto;
+    scroll-padding: 0px 0px 0px 0px;
 }
 
 .nominations {
