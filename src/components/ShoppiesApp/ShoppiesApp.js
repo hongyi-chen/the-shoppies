@@ -6,6 +6,37 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import MovieCard from "../MovieCard/MovieCard";
 
 function ShoppiesApp() {
+  const testMovies = [
+    {
+        Poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+        Title: "Black Panther",
+        Type: "movie",
+        Year: "2018",
+        imdbID: "tt1825683",
+    },
+    {
+        Poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+        Title: "Black Panther",
+        Type: "movie",
+        Year: "2018",
+        imdbID: "tt1825682",
+    },
+    {
+        Poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+        Title: "Black Panther",
+        Type: "movie",
+        Year: "2018",
+        imdbID: "tt1825684",
+    },
+    {
+        Poster: "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+        Title: "Black Panther",
+        Type: "movie",
+        Year: "2018",
+        imdbID: "tt1825687",
+    },
+  ];
+
   return (
     <div>
       <div className="search-section">
@@ -26,12 +57,9 @@ function ShoppiesApp() {
           <h2>Results for</h2>{" "}
           {/* Remember to change this to include the search */}
           <div className="movie-cards">
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            {testMovies.map((movieData) => (
+              <MovieCard movie={movieData} />
+            ))}
           </div>
         </div>
         <div className="nominations">
