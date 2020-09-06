@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, {useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import actions from "../../redux/actions/movieActions";
 import "./SearchBar.css";
 
 function SearchBar() {
-  const [searchValue, setSearchValue] = useState();
+  const { getAllMovies, setSearchValue } = actions;
+  const dispatch = useDispatch();
+  const searchValue = useSelector((state) => state.movies.searchValue);
 
-  async function getMovies(movieName) {
-      let response = await fetch(`http://www.omdbapi.com/?apikey=94d41b07&type=movie&s=${movieName}`);
-      let movieData = await response.json();
-      return movieData;
-  }
-  
   const handleSearchChange = (event) => {
-      const { value } = event.target;
-      getMovies(value).then(movieData => console.log(movieData))
-  }
+    const { value } = event.target;
+    dispatch(setSearchValue(value));
+  };
+
+  useEffect(() => {
+    dispatch(getAllMovies(searchValue));
+  }, [dispatch, getAllMovies, searchValue]);
 
   return (
     <input

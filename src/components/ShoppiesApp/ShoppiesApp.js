@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./ShoppiesApp.css";
 import SearchBar from "../SearchBar/SearchBar";
 import ShoppingBag from "../../images/shopping-bag.png";
@@ -6,53 +7,29 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import MovieCard from "../MovieCard/MovieCard";
 
 function ShoppiesApp() {
-  const testMovies = [
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Black Panther",
-      Type: "movie",
-      Year: "2018",
-      imdbID: "tt1825683",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Black Panther",
-      Type: "movie",
-      Year: "2018",
-      imdbID: "tt1825682",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Black Panther",
-      Type: "movie",
-      Year: "2018",
-      imdbID: "tt1825684",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Black Panther",
-      Type: "movie",
-      Year: "2018",
-      imdbID: "tt1825687",
-    },
-  ];
+  const searchValue = useSelector((state) => state.movies.searchValue);
+  const movieResults = useSelector((state) => state.movies.allMovies);
+  const nominatedMovies = useSelector((state) => state.movies.nominatedMovies);
+  const status = useSelector((state) => state.movies.isLoading);
+
+  const resultsText = movieResults.length === 0 ? "Please search for a movie above" : "Click on a movie to nominate it";
+  let nomsText = "Please search for a movie above";
+  if (movieResults.length !== 0 && nominatedMovies.length === 0) {
+      nomsText = "Please nominate a movie first"
+  } else if (nominatedMovies.length !== 0) {
+      nomsText = "Click on a movie to un-nominate it"
+  }
 
   return (
     <div>
       <div className="search-section">
-      <img
-            src={ShoppingBag}
-            alt="shopping bag trophy"
-            height="40px"
-            width="40px"
-          ></img>
-        <h1>
-          The Shoppies{" "}
-        </h1>
+        <img
+          src={ShoppingBag}
+          alt="shopping bag trophy"
+          height="40px"
+          width="40px"
+        ></img>
+        <h1>The Shoppies </h1>
         <h3>
           <span role="img" aria-label="popcorn">
             &#127871;
@@ -63,18 +40,19 @@ function ShoppiesApp() {
       </div>
       <div className="results-and-noms-section">
         <div className="results">
-          <h2>Results for</h2>
+          <h2>Results for: {`"${searchValue}"`}</h2>
           <h3>
             <span role="img" aria-label="green-checkmark">
               &#9989;
             </span>{" "}
-            Click on a movie to nominate it!
+            {resultsText}
           </h3>
-          {/* Remember to change this to include the search */}
           <div className="movie-cards">
-            {testMovies.map((movieData) => (
-              <MovieCard movie={movieData} />
-            ))}
+            {status ? ( // you can add in a loading indicator here
+            <p>Loading...</p>
+            ) : (
+              movieResults.map((movieData) => <MovieCard movie={movieData} />)
+            )}
           </div>
         </div>
         <div className="nominations">
@@ -83,7 +61,7 @@ function ShoppiesApp() {
             <span role="img" aria-label="red-x">
               &#10060;
             </span>{" "}
-            Click on a movie to un-nominate!
+            {nomsText}
           </h3>
           <div className="nominated-movies"></div>
           <SubmitButton />
