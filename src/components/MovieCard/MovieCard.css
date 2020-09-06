@@ -30,7 +30,7 @@
     content: '';
     background-color: #ffce66;
     position: absolute;
-    left: 50%; /*this can be used to change the spacing*/
+    left: 50%;
     top: 50%;
     text-align: left;
     transform: translate(-50%, -50%) scale3d(1, 1, 1);
