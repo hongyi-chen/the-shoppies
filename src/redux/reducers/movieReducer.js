@@ -38,7 +38,7 @@ export const moviesReducer = (state = shoppiesState, action) => {
         ...state,
         isLoading: false,
         errorMessage: action.payload,
-        allMovies: state.allMovies = [],
+        allMovies: state.allMovies = [], // if there are no results, you just set it to 0
       };
     case types.NOMINATE_MOVIE_SUCCESS:
       return {
