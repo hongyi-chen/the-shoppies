@@ -141,12 +141,13 @@ img {
 
 .card-poster {
     float: right;
-    margin-right: 40%;
+    margin-right: calc(40%);
 }
 
 .card-poster img {
     position: absolute;
     top: 0;
     bottom: 0;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
