@@ -53,7 +53,7 @@ function ShoppiesApp() {
           </h3>
           <div className="movie-cards">
             {loadingStatus ? (
-              <p>Loading...</p>
+              <div className="loading">Loading</div>
             ) : (
               movieResults.map((movieData) => (
                 <MovieCard key={movieData.imdbID} movie={movieData} />
