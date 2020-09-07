@@ -71,9 +71,9 @@ function ShoppiesApp() {
           </h3>
           <div className="nominated-movies-container">
             <div className="nominated-movies">
-            {nominatedMovies.map((movieData) => (
-              <Nomination key={movieData.imdbID} movie={movieData} />
-            ))}
+              {nominatedMovies.map((movieData) => (
+                <Nomination key={movieData.imdbID} movie={movieData} />
+              ))}
             </div>
           </div>
           <SubmitButton />
