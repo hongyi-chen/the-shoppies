@@ -52,7 +52,7 @@ function ShoppiesApp() {
             {resultsText}
           </h3>
           <div className="movie-cards">
-            {loadingStatus ? ( // you can add in a loading indicator here
+            {loadingStatus ? (
               <p>Loading...</p>
             ) : (
               movieResults.map((movieData) => (

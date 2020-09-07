@@ -24,7 +24,6 @@ export const moviesReducer = (state = shoppiesState, action) => {
         isLoading: true,
       };
     case types.GET_MOVIES_SUCCESS:
-      console.log(action.payload.Search);
       return {
         ...state,
         isLoading: false,

@@ -6,9 +6,8 @@ import actions from "../../redux/actions/movieActions";
 
 const Nomination = ({ movie }) => {
   const dispatch = useDispatch();
-  const { Title, Year, isChecked = false } = movie;
+  const { Title, Year } = movie;
   const { removeNominatedMovie } = actions;
-  console.log(isChecked);
 
   const handleRemove = () => {
     dispatch(removeNominatedMovie(movie));
