@@ -5,10 +5,8 @@ const shoppiesState = {
   searchValue: "",
   omdbResults: {},
   allMovies: [],
-  nominatedMovies: [], // just check if this reaches 5
-  canNominate: false, // might not be useful
+  nominatedMovies: [],
   isLoading: false,
-  errorMessage: "",
 };
 
 export const moviesReducer = (state = shoppiesState, action) => {
@@ -24,27 +22,25 @@ export const moviesReducer = (state = shoppiesState, action) => {
       return {
         ...state,
         isLoading: true,
-        canNominate: true,
       };
     case types.GET_MOVIES_SUCCESS:
+      console.log(action.payload.Search);
       return {
         ...state,
         isLoading: false,
         omdbResults: action.payload,
-        allMovies: action.payload.Search,
+        allMovies: action.payload.Search
       };
     case types.GET_MOVIES_FAILURE:
       return {
         ...state,
         isLoading: false,
-        errorMessage: action.payload,
         allMovies: state.allMovies = [], // if there are no results, you just set it to 0
       };
     case types.NOMINATE_MOVIE_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        canNominate: false,
         nominatedMovies: [...state.nominatedMovies, action.payload],
       };
     case types.REMOVE_MOVIE_SUCCESS:
@@ -61,7 +57,6 @@ export const moviesReducer = (state = shoppiesState, action) => {
       return {
         ...state,
         isLoading: false,
-        canNominate: false,
       };
     default:
       return state;

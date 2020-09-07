@@ -112,14 +112,15 @@ html {
 h4 {
     margin-top: 3.5vh;
     line-height: 0rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #333333;
 }
 
 p {
     margin-top: 0vh;
     line-height: 0rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 550;
 }
 
 img {
@@ -129,8 +130,8 @@ img {
 
 .card-label {
     display: block;
-    min-width: calc(60%);
-    max-width: calc(60%);
+    min-width: calc(55%);
+    max-width: calc(55%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -144,5 +145,5 @@ img {
 }
 
 .card-poster img {
-    bottom: -100%;
+    top: -200%;
 }

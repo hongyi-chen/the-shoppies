@@ -1,9 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import actions from "../../redux/actions/movieActions";
 import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
   const { Poster, Title, Year, imdbID } = movie;
-  const [checked, setChecked] = useState(false);
+  const { nominateMovie, removeNominatedMovie } = actions;
+  const nominatedMovies = useSelector((state) => state.movies.nominatedMovies);
+  const defaultChecked =
+    nominatedMovies.filter((movie) => movie.imdbID === imdbID).length === 0
+      ? false
+      : true;
+  const [checked, setChecked] = useState(defaultChecked);
+  movie.isChecked = checked;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setChecked(defaultChecked);
+  }, [nominatedMovies, defaultChecked, movie]);
+
+  const handleChange = () => {
+    setChecked(!checked);
+    if (!checked) {
+      if (nominatedMovies.length === 5) {
+        alert("Maximum number of nominations added!");
+        setChecked(false);
+      } else {
+        dispatch(nominateMovie(movie));
+      }
+    } else if (checked) {
+      dispatch(removeNominatedMovie(movie));
+    }
+  };
 
   return (
     <div className="input-group">
@@ -12,7 +40,7 @@ const MovieCard = ({ movie }) => {
         name="option"
         type="checkbox"
         checked={checked}
-        onChange={() => setChecked(!checked)}
+        onChange={handleChange}
       />
       <label htmlFor={imdbID}>
         <div className="card-label">

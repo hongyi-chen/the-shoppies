@@ -24,6 +24,10 @@
     width: 100%;
     border-radius: 5px;
     background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 h1 {
