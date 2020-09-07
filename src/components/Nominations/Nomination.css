@@ -1,15 +1,17 @@
 .year {
     color: #ABABAB;
+    padding-top: 2%;
+    padding-left: 9%;
 }
 
 .nomination-card {
-    padding: 4% 4% 4% 4%;
+    padding: 2% 4% 0 4%;
+    margin-top: 0%;
 }
 
 .nomination-card h2 {
-    float: left;
+    font-size: 1.4rem;
     line-height: 0;
-    max-width: calc(20%);
     white-space: nowrap;
 }
 
@@ -23,8 +25,8 @@
 
 .nomination-card svg {
     width: 5%;
+    margin-top: 5%;
     height: auto;
     float: left;
-    padding-top: 2%;
     margin-right: 4%;
 }
