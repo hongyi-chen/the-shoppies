@@ -42,7 +42,7 @@ const removeNominatedMovie = (movie) => (dispatch) => {
 };
 
 const getAllMovies = (movieName) => async (dispatch) => {
-  const moviesResponse = `http://www.omdbapi.com/?apikey=94d41b07&type=movie&s=${movieName}`;
+  const moviesResponse = `https://www.omdbapi.com/?apikey=94d41b07&type=movie&s=${movieName}`;
 
   dispatch({
     type: types.GET_MOVIES,
