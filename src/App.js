@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import ShoppiesApp from './components/ShoppiesApp/ShoppiesApp';
+import React from "react";
+import "./App.css";
+import ShoppiesApp from "./components/ShoppiesApp/ShoppiesApp";
 
 function App() {
   return (

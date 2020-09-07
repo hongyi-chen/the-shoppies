@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./ShoppiesApp.css";
 import SearchBar from "../SearchBar/SearchBar";
 import ShoppingBag from "../../images/shopping-bag.png";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import MovieCard from "../MovieCard/MovieCard";
 import Nomination from "../Nominations/Nomination";
+import "./ShoppiesApp.css";
 
 function ShoppiesApp() {
   const searchValue = useSelector((state) => state.movies.searchValue);

@@ -96,7 +96,7 @@
 }
 
 .input-group input:checked~p {
-    color: white;
+    color: #ffffff;
 }
 
 *,

@@ -28,13 +28,13 @@ export const moviesReducer = (state = shoppiesState, action) => {
         ...state,
         isLoading: false,
         omdbResults: action.payload,
-        allMovies: action.payload.Search
+        allMovies: action.payload.Search,
       };
     case types.GET_MOVIES_FAILURE:
       return {
         ...state,
         isLoading: false,
-        allMovies: state.allMovies = [], // if there are no results, you just set it to 0
+        allMovies: (state.allMovies = []),
       };
     case types.NOMINATE_MOVIE_SUCCESS:
       return {
@@ -49,7 +49,7 @@ export const moviesReducer = (state = shoppiesState, action) => {
         canNominate: false,
         nominatedMovies: state.nominatedMovies.filter(
           (movies) => movies.imdbID !== action.payload
-        ), // interesting way of removing, might need to redo
+        ),
       };
     case types.NOMINATE_MOVIE_FAILURE:
     case types.REMOVE_MOVIE_FAILURE:
