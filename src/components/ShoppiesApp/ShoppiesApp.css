@@ -19,13 +19,19 @@
     width: 35%;
 }
 
-.nominated-movies {
+.nominated-movies-container {
     height: 48vh;
     width: 100%;
     border-radius: 5px;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nominated-movies {
+    max-width: 95%;
     overflow: hidden;
     text-overflow: ellipsis;
 }

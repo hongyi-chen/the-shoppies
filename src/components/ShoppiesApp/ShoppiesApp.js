@@ -69,10 +69,12 @@ function ShoppiesApp() {
             </span>{" "}
             {nomsText}
           </h3>
-          <div className="nominated-movies">
+          <div className="nominated-movies-container">
+            <div className="nominated-movies">
             {nominatedMovies.map((movieData) => (
               <Nomination key={movieData.imdbID} movie={movieData} />
             ))}
+            </div>
           </div>
           <SubmitButton />
         </div>
