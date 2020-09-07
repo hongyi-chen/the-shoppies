@@ -24,49 +24,6 @@ function ShoppiesApp() {
     nomsText = "Click on a movie to un-nominate it";
   }
 
-  const testMovies = [
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "BlaasdfPantherd sdafds fdssd fsdfsdfsd dsfsdf",
-      Type: "movie",
-      Year: "20123123",
-      imdbID: "tt1825683",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Bla523sfgck Panther",
-      Type: "movie",
-      Year: "201232",
-      imdbID: "tt1825682",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Bl231",
-      Type: "movie",
-      Year: "2018512",
-      imdbID: "tt1825684",
-    },
-    {
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-      Title: "Black Panther",
-      Type: "movie",
-      Year: "2018321",
-      imdbID: "tt1825687",
-    },
-    {
-        Poster:
-          "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
-        Title: "Black Panther",
-        Type: "movie",
-        Year: "2018321",
-        imdbID: "tt1825687",
-      },
-  ];
-
   return (
     <div>
       <div className="search-section">
