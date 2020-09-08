@@ -1,4 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Shoppies
+
+Movie awards for entrepreneurs webapp using OMDB API as part of Shopify Winter 2021 Intern Challenge.
+
+* Search OMDB and display the results (movies only)
+* Add a movie from the search results to our nomination list
+* View the list of films already nominated
+* Remove a nominee from the nomination list
+
+Built with React, Redux, and HTML/CSS. 
+
+This project is hosted here: [the shoppies](https://hongyi-chen.github.io/the-shoppies/)
 
 ## Available Scripts
 
